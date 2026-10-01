@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1A56DB" />
+    <meta name="description" content="Public Voice - AI-Enabled Multilingual Complaint Reporting System" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Public Voice</title>
+    <style>
+      .goog-te-banner-frame { display: none !important; }
+      .skiptranslate { display: none !important; }
+      body { top: 0 !important; position: static !important; }
+      #goog-gt-tt { display: none !important; }
+      .goog-te-balloon-frame { display: none !important; }
+      .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
+      .VIpgJd-ZVi9od-aZ2wEe-wOHMyf { display: none !important; }
+      .VIpgJd-ZVi9od-aZ2wEe-OiiCO { display: none !important; }
+      iframe.goog-te-menu-frame { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <!-- Google Translate hidden container -->
+    <div id="google_translate_element" style="position:absolute;top:-9999px;left:-9999px;visibility:hidden;"></div>
+
+    <script type="text/javascript">
+      // Called automatically by Google after script loads
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            includedLanguages: 'en,ta,si',
+            autoDisplay: false
+          },
+          'google_translate_element'
+        );
+        console.log('✅ Google Translate initialised');
+      }
+
+      // Core translate function — waits for the combo box then fires
+      window.doGoogleTranslate = function(lang) {
+        console.log('🌐 Translating to:', lang);
+
+        function setCookie(name, value) {
+          var domain = window.location.hostname;
+          document.cookie = name + '=' + value + ';path=/;domain=' + domain;
+          document.cookie = name + '=' + value + ';path=/';
+        }
+
+        function restoreEnglish() {
+          setCookie('googtrans', '/en/en');
+          window.location.reload();
+        }
+
+        function translateTo(langCode) {
+          // Set the cookie directly — most reliable method
+          setCookie('googtrans', '/en/' + langCode);
+
+          // Also try the select element
+          var select = document.querySelector('.goog-te-combo');
+          if (select) {
+            select.value = langCode;
+            var evt = document.createEvent('HTMLEvents');
+            evt.initEvent('change', true, true);
+            select.dispatchEvent(evt);
+            console.log('✅ Triggered via select:', langCode);
+          } else {
+            // No select found — reload with cookie set
+            console.log('⚠️ Select not found, reloading with cookie...');
+            window.location.reload();
+          }
+        }
+
+        if (lang === 'en') {
+          restoreEnglish();
+        } else {
+          translateTo(lang);
+        }
+      };
+    </script>
+
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+  </body>
+</html>

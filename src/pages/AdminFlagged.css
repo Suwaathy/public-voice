@@ -1,0 +1,119 @@
+:root {
+  --danger-50: #fef2f2;
+  --danger-200: #fecaca;
+  --danger-700: #b91c1c;
+
+  --success-50: #ecfdf5;
+  --success-200: #bbf7d0;
+  --success-700: #15803d;
+
+  --warning-50: #fffbeb;
+  --warning-200: #fde68a;
+  --warning-700: #b45309;
+}
+
+.admin-flagged-page {
+  margin-left: 270px;
+  padding: 28px;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 55%);
+  min-height: calc(100vh - 64px);
+}
+
+.admin-flagged-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.admin-flagged-title {
+  margin: 0;
+  font-size: 26px;
+  color: #0f172a;
+}
+
+.admin-flagged-subtitle {
+  margin-top: 6px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.admin-flagged-empty {
+  padding: 18px;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.admin-flagged-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.admin-flagged-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 25px rgba(2, 6, 23, 0.04);
+  padding: 16px;
+}
+
+.admin-flagged-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.admin-flagged-category {
+  font-size: 16px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.admin-flagged-location {
+  margin-top: 6px;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.admin-flagged-badge {
+  border: 1px solid;
+  padding: 6px 12px;
+  border-radius: 999px; /* pill */
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.admin-flagged-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.admin-flagged-metric {
+  background: #f8fafc;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.admin-flagged-metric-label {
+  color: #64748b;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.admin-flagged-metric-value {
+  margin-top: 6px;
+  color: #0f172a;
+  font-weight: 900;
+  font-size: 16px;
+}
+
